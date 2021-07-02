@@ -13,15 +13,15 @@ You can pass you own `EmojiIdentifierResolvable` array (2 emojis) that will be a
 
 ### Installation
 
-- `npm install `
+- `npm install djs-buttons-pagination`
 
 --- 
 
 ### Usage
 
 ```js
-// Import the  package
-const buttonsPagination = require("");
+// Import the  package djs-buttons-pagination
+const buttonsPagination = require("djs-buttons-pagination");
 
 // Make your embeds.
 const { MessageEmbed } = require("discord.js");
@@ -42,12 +42,12 @@ And there you have your latest djs v13 buttons pagination
 
 ### Preview
 
-[!Preview](https://cdn.discordapp.com/attachments/686994235609972747/860368887010951188/unknown.png)
+![Preview](https://github.com/DiabolusGX/djs-buttons-pagination/blob/master/demo/demo.png)
 
 
 ---
 
 
-### Help?
+### Need Help?
 
 - **Join my discord server: https://discord.gg/8kdx63YsDf**
