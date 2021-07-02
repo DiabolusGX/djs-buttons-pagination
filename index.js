@@ -32,7 +32,7 @@ export default buttonsPagination = async (msg, pages, emojis = [], timeout = 600
     if (!pages) throw new Error("Pages are not given.");
 
     let page = 0;
-    const navButtonsRow = getButtons(page === 0, page === pages.length - 1);
+    const navButtonsRow = getButtons(page === 0, page === pages.length - 1, emojis[0], emojis[1]);
     const curPage = await msg.channel.send({ embeds: [pages[page]], components: [navButtonsRow] });
 
     const filter = i => (i.customID === "nextpage" || i.customID === "previouspage")
@@ -43,10 +43,16 @@ export default buttonsPagination = async (msg, pages, emojis = [], timeout = 600
         await i.deferUpdate();
         if (i.customID === "previouspage" && page > 0) page--;
         else if (i.customID === "nextpage" && page + 1 < pages.length) page++;
-        curPage.edit({ embeds: [pages[page]], components: [getButtons(page === 0, page === pages.length - 1)] });
+        curPage.edit({
+            embeds: [pages[page]],
+            components: [getButtons(page === 0, page === pages.length - 1, emojis[0], emojis[1])]
+        });
     });
     collector.on("end", collected => {
-        curPage.edit({ embeds: [pages[page]], components: [getButtons(true, true)] });
+        curPage.edit({
+            embeds: [pages[page]],
+            components: [getButtons(true, true, emojis[0], emojis[1])]
+        });
         return curPage;
     });
 }
