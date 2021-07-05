@@ -33,7 +33,7 @@ export const buttonsPagination = async (
     msg: Message,
     pages: MessageEmbed[],
     emojis: EmojiIdentifierResolvable[] = ["", ""],
-    timeout = 120000
+    timeout = 60000
 ) => {
     if (!msg || !msg.channel) throw new Error("Channel is inaccessible.");
     if (!pages) throw new Error("Pages are not given.");

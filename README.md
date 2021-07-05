@@ -35,11 +35,16 @@ const { MessageEmbed } = require("discord.js");
 const embed1 = new MessageEmbed();
 
 // Create an array of embeds
-const pages = [embed1, embed2 /* soo on however embeds you want*/, , embedx];
+const pages = [embed1, embed2 /* soo on.. however embeds you want*/, , embedx];
+
+// Emojis for buttons -> defaults to ["", ""] i.e no emojis
+// You can only use emojiID like ["860348644707794966>", "860348672730464256>"] OR :
+const emojiList = ["<a:left_arrow:860348644707794966>", "<a:right_arrow:860348672730464256>"];
+
+// Timeout is the time till the reaction collectors are active, after this buttons will be disabled (in ms), defaults to 60000 (1 min)
+const timeout = 30000; // 3 seconds
 
 // Call the paginationEmbed method, first two arguments (message and pages) are required
-// emojiList is the pageturners defaults to [] i.e no emojis
-// timeout is the time till the reaction collectors are active, after this buttons will be disabled (in ms), defaults to 60000
 buttonsPagination(message, pages, emojiList, timeout);
 ```
 
