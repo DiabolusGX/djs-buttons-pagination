@@ -1,3 +1,6 @@
+# Prod
+dist/
+
 # Logs
 logs
 *.log

@@ -2,7 +2,8 @@
   "name": "djs-buttons-pagination",
   "version": "1.0.2",
   "description": "A simple and easy to use embeds pagination tool that uses only discord.js (no external package) that'll be compatible with upcoming djs v13",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/DiabolusGX/djs-buttons-pagination#readme",
   "dependencies": {
-    "discord.js": "^13.0.0-dev.fe6cc0c.1625184228"
+    "discord.js": "^13.0.0-dev.fe6cc0c.1625184228",
+    "typescript": "^4.3.5"
   }
 }
