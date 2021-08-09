@@ -1,4 +1,5 @@
 import {
+    Awaited,
     Message,
     Collection,
     MessageEmbed,
@@ -16,13 +17,13 @@ const getButtons = (
 ): MessageActionRow =>
     new MessageActionRow().addComponents(
         new MessageButton()
-            .setCustomID("previouspage")
+            .setCustomId("previouspage")
             .setLabel("Previous Page")
             .setStyle("DANGER")
             .setEmoji(prevEmoji ?? "")
             .setDisabled(prev),
         new MessageButton()
-            .setCustomID("nextpage")
+            .setCustomId("nextpage")
             .setLabel("Next Page")
             .setStyle("SUCCESS")
             .setEmoji(nextEmoji ?? "")
@@ -52,18 +53,18 @@ export const buttonsPagination = async (
     });
 
     const filter = (i: MessageComponentInteraction): boolean =>
-        (i.customID === "nextpage" || i.customID === "previouspage") &&
+        (i.customId === "nextpage" || i.customId === "previouspage") &&
         !i.user.bot &&
         i.user.id === msg.author.id;
-    const collector = msg.channel.createMessageComponentInteractionCollector({
+    const collector = msg.channel.createMessageComponentCollector({
         filter,
         time: timeout,
     });
 
     collector.on("collect", async (i: MessageComponentInteraction) => {
         await i.deferUpdate();
-        if (i.customID === "previouspage" && page > 0) page--;
-        else if (i.customID === "nextpage" && page + 1 < pages.length) page++;
+        if (i.customId === "previouspage" && page > 0) page--;
+        else if (i.customId === "nextpage" && page + 1 < pages.length) page++;
         curPage.edit({
             embeds: [pages[page]],
             components: [
