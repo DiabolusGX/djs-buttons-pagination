@@ -30,15 +30,15 @@ const getButtons = (
             .setDisabled(nxt)
     );
 
-const buttonsPagination = async (
+export const buttonsPagination = async (
     msg: Message,
     pages: MessageEmbed[],
     emojis: EmojiIdentifierResolvable[] = ["", ""],
-    timeout = 30000
+    timeout = 60000
 ) => {
     if (!msg || !msg.channel) throw new Error("Channel is inaccessible.");
     if (!pages) throw new Error("Pages are not given.");
-    if (!emojis.length) emojis = ["", ""];
+    if (!emojis.length) emojis = ["", ""]
 
     let page = 0;
     const navButtonsRow = getButtons(
@@ -90,5 +90,3 @@ const buttonsPagination = async (
     );
     return curPage;
 };
-
-export default buttonsPagination;

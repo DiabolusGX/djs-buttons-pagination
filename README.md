@@ -29,6 +29,8 @@ You can pass you own `EmojiIdentifierResolvable` array (2 emojis) that will be a
 ```js
 // Import the  package djs-buttons-pagination
 const buttonsPagination = require("djs-buttons-pagination");
+// If default import does not work, try destructuring the package
+const { buttonsPagination } = require("djs-buttons-pagination");
 
 // Make your embeds.
 const { MessageEmbed } = require("discord.js");
