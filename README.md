@@ -42,7 +42,7 @@ const pages = [embed1, embed2 /* soo on.. however embeds you want*/, , embedx];
 const emojiList = ["<a:left_arrow:860348644707794966>", "<a:right_arrow:860348672730464256>"];
 
 // Timeout is the time till the reaction collectors are active, after this buttons will be disabled (in ms), defaults to 60000 (1 min)
-const timeout = 30000; // 3 seconds
+const timeout = 30000; // 30 seconds
 
 // Call the paginationEmbed method, first two arguments (message and pages) are required
 buttonsPagination(message, pages, emojiList, timeout);
